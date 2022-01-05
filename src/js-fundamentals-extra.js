@@ -8,8 +8,9 @@
 //
 // TODO: write code below
 
-
-
+function secondsInHours(hours) {
+  return hours * 3600
+}
 // MilesTravelled
 //
 // Create a function that takes a number representing speed in miles per hour,
@@ -24,6 +25,16 @@
 // TODO: write code below
 
 
+function milesTravelled(speed, minutes) {
+
+  const hoursTravelled = minutes / 60
+
+  const miles = speed * hoursTravelled
+
+  return Math.ceil(miles)
+
+}
+
 
 // KilometersToMiles
 //
@@ -36,6 +47,12 @@
 // with a reference to your function.
 //
 // TODO: write code below
+
+function kilometersToMiles(kilometers) {
+  const miles = kilometers / 1.6
+  return Math.round(miles)
+}
+
 
 
 
@@ -53,6 +70,19 @@
 //
 // TODO: write code below
 
+function makeSentence(string) {
+  let capitalLetter = string.charAt(0).toUpperCase()
+
+  const lastCharacter = string.charAt(string.length - 1)
+
+  const sentence = capitalLetter + string.substring(1)
+
+  if (lastCharacter !== '.' && lastCharacter !== '!' && lastCharacter !== '?') {
+    return sentence + '.'
+  }
+  return sentence
+}
+
 
 
 // FileExtension
@@ -66,6 +96,21 @@
 // with a reference to your function.
 //
 // TODO: write code below
+
+function fileExtention(string){
+  const dot = ['.']
+  let extention = string.substring(string.length-3)
+
+  if ( string.includes(dot)){
+    return extention
+  }
+ else return ''
+  }
+
+
+
+
+
 
 
 
@@ -119,19 +164,19 @@
 // TODO: change undefined to be the name of the functions you defined
 module.exports = {
   //SecondsInHours
-  a: undefined,
+  a: secondsInHours,
 
   //MilesTravelled,
-  b: undefined,  
+  b: milesTravelled,
 
   //KilometersToMiles,
-  c: undefined, 
+  c: kilometersToMiles,
 
   //MakeSentence
-  d: undefined, 
+  d: makeSentence,
 
   //FileExtension
-  e: undefined,
+  e: fileExtention,
 
   //Range
   f: undefined,
