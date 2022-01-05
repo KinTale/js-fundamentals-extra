@@ -127,8 +127,10 @@ function fileExtention(string) {
 // TODO: write code below
 
 function range (numbers) {
+
 let highestNumber = Math.max(...numbers)
 let lowestNumber = Math.min(...numbers)
+
  return highestNumber - lowestNumber 
 
 }
