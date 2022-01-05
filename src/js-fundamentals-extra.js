@@ -97,15 +97,16 @@ function makeSentence(string) {
 //
 // TODO: write code below
 
-function fileExtention(string){
-  const dot = ['.']
-  let extention = string.substring(string.length-3)
+function fileExtention(string) {
 
-  if ( string.includes(dot)){
+  const dot = '.'
+  let extention = string.substring(string.length - 3)
+
+  if (string.includes(dot)) {
     return extention
   }
- else return ''
-  }
+  else return ''
+}
 
 
 
@@ -124,6 +125,17 @@ function fileExtention(string){
 // with a reference to your function.
 //
 // TODO: write code below
+
+function range (numbers) {
+let highestNumber = Math.max(...numbers)
+let lowestNumber = Math.min(...numbers)
+ return highestNumber - lowestNumber 
+
+}
+
+
+
+
 
 
 
@@ -179,7 +191,7 @@ module.exports = {
   e: fileExtention,
 
   //Range
-  f: undefined,
+  f: range,
 
   //CheckTransactions
   g: undefined,
