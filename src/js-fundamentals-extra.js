@@ -97,22 +97,17 @@ function makeSentence(string) {
 //
 // TODO: write code below
 
-function fileExtention(string) {
-
+function fileExtention(fileName) {
   const dot = '.'
-  let extention = string.substring(string.length - 3)
 
-  if (string.includes(dot)) {
-    return extention
+  if (!fileName.includes(dot)) {
+    return ''
   }
-  else return ''
+
+  return fileName.substring(fileName.lastIndexOf(dot)+1)
+ /* return fileName.substring(fileName.length - 3) */
+
 }
-
-
-
-
-
-
 
 
 // Range
@@ -126,20 +121,14 @@ function fileExtention(string) {
 //
 // TODO: write code below
 
-function range (numbers) {
+function range(numbers) {
 
-let highestNumber = Math.max(...numbers)
-let lowestNumber = Math.min(...numbers)
+  let highestNumber = Math.max(...numbers)
+  let lowestNumber = Math.min(...numbers)
 
- return highestNumber - lowestNumber 
+  return highestNumber - lowestNumber
 
 }
-
-
-
-
-
-
 
 // CheckTransactions
 //
@@ -158,6 +147,16 @@ let lowestNumber = Math.min(...numbers)
 //
 // TODO: write code below
 
+function CheckTransactions (transactions, balance, overdraft) {
+for (let i = 0; i<transactions.length;i++) {
+  const transaction = transactions[i]
+ balance = balance + transaction
+}
+ if (balance < -overdraft) {
+ return false
+ }
+return true
+}
 
 
 // FilmsInGenre
@@ -173,6 +172,17 @@ let lowestNumber = Math.min(...numbers)
 //
 // TODO: write code below
 
+function filmsInGenre (films, genre) {
+  const names = []
+for (let i=0; i<films.length; i++) {
+  const film = films[i]
+
+  if (film.genres.includes(genre)) {
+    names.push(film.name)
+  }
+}
+return names
+}
 
 
 // TODO: change undefined to be the name of the functions you defined
@@ -196,8 +206,8 @@ module.exports = {
   f: range,
 
   //CheckTransactions
-  g: undefined,
+  g: CheckTransactions,
 
   //FilmsInGenre
-  h: undefined,
+  h: filmsInGenre,
 }
